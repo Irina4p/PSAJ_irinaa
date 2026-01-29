@@ -1,0 +1,158 @@
+/* --- 1. Reset Dasar & Variabel --- */
+* {
+    margin: 0; /* Menghapus margin bawaan browser */
+    padding: 0; /* Menghapus padding bawaan browser */
+    box-sizing: border-box; /* Memastikan padding tidak menambah lebar elemen */
+    font-family: 'Poppins', sans-serif; /* Menggunakan font modern (pastikan link font ada di HTML) */
+}
+
+:root {
+    --pink-soft: #ffcad4; /* Warna pink utama yang lembut */
+    --pink-dark: #f4acb7; /* Warna pink sedikit gelap untuk hover */
+    --putih: #ffffff; /* Putih bersih */
+    --abu-muda: #f8f9fa; /* Abu-abu sangat muda untuk variasi latar */
+    --teks: #4a4a4a; /* Warna teks agar tidak terlalu hitam pekat */
+}
+
+body {
+    background-color: var(--putih);
+    color: var(--teks);
+    line-height: 1.6; /* Memberi jarak antar baris teks agar nyaman dibaca */
+}
+
+/* --- 2. Navigasi --- */
+header {
+    background-color: var(--putih);
+    padding: 20px 10%;
+    display: flex; /* Membuat menu berbaris ke samping */
+    justify-content: space-between; /* Judul di kiri, menu di kanan */
+    align-items: center; /* Menyejajarkan teks secara vertikal */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Memberi bayangan halus di bawah navigasi */
+    position: sticky; /* Navigasi tetap di atas saat di-scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none; /* Menghilangkan titik-titik pada daftar menu */
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none; /* Menghilangkan garis bawah link */
+    color: var(--teks);
+    font-weight: 500;
+    transition: 0.3s; /* Efek transisi saat kursor menyentuh menu */
+}
+
+.nav-links a:hover {
+    color: var(--pink-dark); /* Berubah warna saat di-hover */
+}
+
+/* --- 3. Hero Section (Beranda) --- */
+.hero {
+    height: 80vh; /* Tinggi section 80% dari tinggi layar */
+    display: flex;
+    flex-direction: column; /* Menyusun konten secara vertikal */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--putih) 0%, var(--pink-soft) 100%);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--pink-dark);
+    margin-bottom: 15px;
+}
+
+/* --- 4. Anggota Kelompok (Kartu Sejajar) --- */
+.section-title {
+    text-align: center;
+    margin: 50px 0 30px;
+    font-size: 2rem;
+}
+
+.grid-anggota {
+    display: grid; /* Menggunakan CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Membuat kolom otomatis sejajar & responsif */
+    gap: 25px; /* Jarak antar kartu anggota */
+    padding: 0 10%;
+}
+
+.card-anggota {
+    background: var(--abu-muda);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--pink-soft);
+    transition: transform 0.3s; /* Efek kartu terangkat saat hover */
+}
+
+.card-anggota:hover {
+    transform: translateY(-10px);
+}
+
+.card-anggota img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Membuat foto profil bulat */
+    margin-bottom: 10px;
+}
+
+/* --- 5. Makalah (Laporan) --- */
+.makalah-container {
+    background-color: var(--pink-soft);
+    margin: 50px 10%;
+    padding: 40px;
+    border-radius: 20px;
+    color: var(--teks);
+}
+
+/* --- 6. Dokumentasi Video --- */
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10%;
+}
+
+.video-box {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    overflow: hidden; /* Memastikan video tetap dalam radius bingkai */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- 7. Footer --- */
+footer {
+    background-color: var(--pink-dark);
+    color: var(--putih);
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+/* --- 8. Responsivitas (Layar Kecil/HP) --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Menu pindah ke bawah judul di HP */
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+    }
+    
+    .nav-links li {
+        margin: 0 10px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
